@@ -1,8 +1,9 @@
 import Link from 'next/link';
 import Image from 'next/image';
 import { notFound } from 'next/navigation';
-import { Clock, ArrowLeft } from 'lucide-react';
-import { posts } from '../page';
+import { Clock, ArrowLeft, ArrowRight, Phone } from 'lucide-react';
+import { posts } from '@/lib/blog-data';
+import { site } from '@/lib/site-config';
 import CtaBanner from '@/components/site/CtaBanner';
 
 export function generateStaticParams() { return posts.map((p) => ({ slug: p.slug })); }
@@ -26,6 +27,15 @@ export default function BlogPostPage({ params }) {
           <div className="relative aspect-[16/9] rounded-2xl overflow-hidden mt-8 shadow-lg"><Image src={p.img} alt={p.title} fill className="object-cover" priority sizes="100vw" /></div>
           <div className="mt-10 prose prose-lg max-w-none prose-headings:font-display prose-headings:text-brand-navy prose-p:text-brand-navy/85 prose-p:leading-relaxed">
             {p.body.split('\n\n').map((para, i) => (<p key={i} className="text-brand-navy/85 leading-relaxed mb-5">{para}</p>))}
+          </div>
+          <div className="card-soft p-6 mt-8">
+            <h2 className="h-display text-3xl">Next step</h2>
+            <p className="text-sm text-brand-mute mt-2">If this situation matches your home, use these direct pages:</p>
+            <div className="mt-4 flex flex-wrap gap-3">
+              {p.serviceSlug && <Link href={`/services/${p.serviceSlug}`} className="btn-ghost">Related service <ArrowRight className="w-4 h-4" /></Link>}
+              {p.locationSlug && <Link href={`/locations/${p.locationSlug}`} className="btn-ghost">Local area page <ArrowRight className="w-4 h-4" /></Link>}
+              <Link href={`tel:${site.phoneRaw}`} className="btn-primary"><Phone className="w-4 h-4" /> Call {site.phone}</Link>
+            </div>
           </div>
         </div>
       </article>

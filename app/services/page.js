@@ -2,11 +2,11 @@ import Link from 'next/link';
 import Image from 'next/image';
 import { Wrench, ArrowRight, ChevronRight, Siren, Waves, Flame, Droplets, Pipette, GitFork, Building2 } from 'lucide-react';
 import { services } from '@/lib/services-data';
-import { images } from '@/lib/site-config';
+import { images, site } from '@/lib/site-config';
 import CtaBanner from '@/components/site/CtaBanner';
 
 const ICONS = { Siren, Waves, Flame, Droplets, Pipette, Wrench, GitFork, Building2 };
-export const metadata = { title: 'Plumbing Services', description: 'Full-service plumbing: emergency, drains, water heaters, leak detection, sewer, fixtures, repiping, and commercial.' };
+export const metadata = { title: `Plumbing Services in ${site.address.city}`, description: 'Dedicated pages for each plumbing service with service-specific keywords, pricing expectations, process details, and FAQs.' };
 
 export default function ServicesPage() {
   return (

@@ -2,6 +2,7 @@ import Link from 'next/link';
 import { Phone, Mail, MapPin, Droplet, Facebook, Instagram, Youtube } from 'lucide-react';
 import { site } from '@/lib/site-config';
 import { services } from '@/lib/services-data';
+import { locations } from '@/lib/locations-data';
 
 export default function Footer() {
   return (
@@ -34,7 +35,7 @@ export default function Footer() {
           <div className="text-xs uppercase tracking-[0.2em] text-brand-accent font-semibold">Company</div>
           <ul className="mt-4 space-y-2.5 text-sm">
             <li><Link href="/about" className="text-white/75 hover:text-white">About us</Link></li>
-            <li><Link href="/pricing" className="text-white/75 hover:text-white">Pricing</Link></li>
+            <li><Link href="/locations" className="text-white/75 hover:text-white">Locations</Link></li>
             <li><Link href="/faq" className="text-white/75 hover:text-white">FAQ</Link></li>
             <li><Link href="/blog" className="text-white/75 hover:text-white">Blog</Link></li>
             <li><Link href="/contact" className="text-white/75 hover:text-white">Contact</Link></li>
@@ -48,6 +49,18 @@ export default function Footer() {
             <li className="flex items-start gap-2"><Mail className="w-4 h-4 mt-0.5 text-brand-accent" /><a href={`mailto:${site.email}`} className="hover:text-white">{site.email}</a></li>
             <li className="flex items-start gap-2"><MapPin className="w-4 h-4 mt-0.5 text-brand-accent" /><span>{site.address.line1}<br />{site.address.city}, {site.address.region} {site.address.postal}</span></li>
           </ul>
+        </div>
+      </div>
+      <div className="border-t border-white/10">
+        <div className="container py-6">
+          <div className="text-xs uppercase tracking-[0.2em] text-brand-accent font-semibold">Areas we serve</div>
+          <div className="mt-3 flex flex-wrap gap-x-4 gap-y-2 text-sm">
+            {locations.map((location) => (
+              <Link key={location.slug} href={`/locations/${location.slug}`} className="text-white/70 hover:text-white transition">
+                {location.name}
+              </Link>
+            ))}
+          </div>
         </div>
       </div>
       <div className="border-t border-white/10">

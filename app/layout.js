@@ -11,9 +11,10 @@ const jakarta = Plus_Jakarta_Sans({ subsets: ['latin'], variable: '--font-jakart
 
 // EDIT: SEO defaults. Add a real /public/og.jpg for social previews.
 export const metadata = {
+  metadataBase: new URL('https://example.com'),
   title: { default: `${site.name} — ${site.tagline}`, template: `%s | ${site.name}` },
   description: site.description,
-  keywords: ['plumber', 'plumbing', 'emergency plumber', 'drain cleaning', 'water heater', site.address.city],
+  keywords: [`plumber in ${site.address.city}`, `${site.address.city} plumbing company`, 'local plumbing service'],
   openGraph: {
     title: `${site.name} — ${site.tagline}`,
     description: site.description,
