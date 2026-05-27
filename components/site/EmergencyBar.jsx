@@ -1,18 +1,34 @@
-import { Phone, Clock, ShieldCheck } from 'lucide-react';
 import Link from 'next/link';
 import { site } from '@/lib/site-config';
 
 // EDIT: Top emergency strip — hide by returning null if not desired.
 export default function EmergencyBar() {
+  const items = [
+    `Live dispatch available now`,
+    `Serving ${site.serviceArea}`,
+    `Licensed local technicians`,
+    `Flat-rate pricing before work starts`,
+  ];
+
   return (
-    <div className="bg-brand-navy text-white text-xs md:text-sm">
-      <div className="container flex flex-wrap items-center justify-between gap-2 py-2">
-        <div className="flex items-center gap-4 opacity-90">
-          <span className="hidden sm:inline-flex items-center gap-1.5"><Clock className="w-3.5 h-3.5" /> {site.hours}</span>
-          <span className="inline-flex items-center gap-1.5"><ShieldCheck className="w-3.5 h-3.5 text-brand-accent" /> Licensed & Insured</span>
+    <div className="bg-[#0a0f14] text-white text-xs overflow-hidden">
+      <div className="container py-2 flex items-center gap-4">
+        <div className="inline-flex items-center gap-2 whitespace-nowrap">
+          <span className="relative flex h-2 w-2">
+            <span className="absolute inline-flex h-full w-full rounded-full bg-brand-accent/70 animate-ping" />
+            <span className="relative inline-flex rounded-full h-2 w-2 bg-brand-accent" />
+          </span>
+          <span className="uppercase tracking-[0.18em] text-[10px] text-white/80">24/7 Online</span>
         </div>
-        <Link href={`tel:${site.phoneRaw}`} className="inline-flex items-center gap-1.5 font-semibold hover:text-brand-accent transition">
-          <Phone className="w-3.5 h-3.5" /> 24/7 · {site.phone}
+        <div className="hidden md:block overflow-hidden flex-1">
+          <div className="ticker-track gap-10 text-white/70">
+            {[...items, ...items].map((item, index) => (
+              <span key={`${item}-${index}`} className="whitespace-nowrap">{item}</span>
+            ))}
+          </div>
+        </div>
+        <Link href={`tel:${site.phoneRaw}`} className="ml-auto font-medium text-white/90 hover:text-brand-accent transition">
+          {site.phone}
         </Link>
       </div>
     </div>

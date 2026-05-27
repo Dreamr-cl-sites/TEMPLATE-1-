@@ -26,22 +26,23 @@ export default function Navbar() {
     return () => window.removeEventListener('scroll', onScroll);
   }, []);
   return (
-    <header className={`sticky top-0 z-40 transition-all ${scrolled ? 'bg-white/90 backdrop-blur border-b border-black/5 shadow-sm' : 'bg-white/70 backdrop-blur-sm'}`}>
-      <div className="container flex items-center justify-between h-16 md:h-20">
+    <header className="sticky top-3 z-40 transition-all">
+      <div className={`container`}>
+        <div className={`mx-auto flex items-center justify-between h-16 md:h-[70px] rounded-full px-4 md:px-6 transition-all ${scrolled ? 'bg-white/68 backdrop-blur-xl shadow-[0_14px_50px_-34px_rgba(5,10,20,0.55)]' : 'bg-white/55 backdrop-blur-lg'}`}>
         <Link href="/" className="flex items-center gap-2.5 group">
           {/* EDIT: replace this icon with the client logo (e.g. <Image src="/logo.svg" .../>) */}
-          <div className="w-10 h-10 rounded-xl bg-brand-navy grid place-items-center group-hover:rotate-6 transition">
+          <div className="w-9 h-9 rounded-full bg-brand-navy grid place-items-center group-hover:rotate-6 transition">
             <Droplet className="w-5 h-5 text-brand-accent" />
           </div>
           <div className="leading-tight">
-            <div className="font-display font-extrabold text-brand-navy text-lg">{site.name}</div>
-            <div className="text-[10px] uppercase tracking-[0.18em] text-brand-mute">{site.tagline}</div>
+            <div className="font-display font-bold tracking-[-0.02em] text-brand-navy text-lg">{site.name}</div>
+            <div className="text-[9px] uppercase tracking-[0.24em] text-brand-mute">{site.tagline}</div>
           </div>
         </Link>
 
         <nav className="hidden lg:flex items-center gap-1">
           {nav.map((n) => (
-            <Link key={n.href} href={n.href} className="px-3 py-2 text-sm font-medium text-brand-navy/80 hover:text-brand-navy hover:bg-brand-sky rounded-md transition">
+            <Link key={n.href} href={n.href} className="px-3 py-2 text-sm font-medium text-brand-navy/80 hover:text-brand-navy hover:bg-white rounded-full transition">
               {n.label}
             </Link>
           ))}
@@ -51,7 +52,7 @@ export default function Navbar() {
           <Link href={`tel:${site.phoneRaw}`} className="inline-flex items-center gap-1.5 text-sm font-semibold text-brand-navy hover:text-brand-blue transition">
             <Phone className="w-4 h-4" /> {site.phone}
           </Link>
-          <Button asChild className="bg-brand-accent hover:bg-brand-accentDark text-white rounded-full shadow-lg shadow-brand-accent/30">
+          <Button asChild className="bg-brand-navy hover:bg-[#12171d] text-white rounded-full">
             <Link href="/book">Book Online</Link>
           </Button>
         </div>
@@ -59,10 +60,12 @@ export default function Navbar() {
         <button className="lg:hidden p-2 rounded-md text-brand-navy" onClick={() => setOpen(!open)} aria-label="Toggle menu">
           {open ? <X className="w-6 h-6" /> : <Menu className="w-6 h-6" />}
         </button>
+        </div>
       </div>
 
       {open && (
-        <div className="lg:hidden border-t border-black/5 bg-white">
+        <div className="lg:hidden mt-2 container">
+          <div className="rounded-3xl bg-white/90 backdrop-blur-xl shadow-lg">
           <div className="container py-3 flex flex-col">
             {nav.map((n) => (
               <Link key={n.href} href={n.href} onClick={() => setOpen(false)} className="py-3 text-base font-medium text-brand-navy border-b border-black/5 last:border-0">
@@ -71,9 +74,10 @@ export default function Navbar() {
             ))}
             <div className="flex gap-2 pt-4">
               <Button asChild variant="outline" className="flex-1 rounded-full"><Link href={`tel:${site.phoneRaw}`}><Phone className="w-4 h-4 mr-1" />Call</Link></Button>
-              <Button asChild className="flex-1 rounded-full bg-brand-accent hover:bg-brand-accentDark"><Link href="/book">Book Online</Link></Button>
+              <Button asChild className="flex-1 rounded-full bg-brand-navy hover:bg-[#12171d]"><Link href="/book">Book Online</Link></Button>
             </div>
           </div>
+        </div>
         </div>
       )}
     </header>

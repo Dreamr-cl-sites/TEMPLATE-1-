@@ -10,18 +10,17 @@ export default function CtaBanner({
   return (
     <section className="section">
       <div className="container">
-        <div className="relative overflow-hidden rounded-3xl bg-brand-navy p-10 md:p-16 text-white">
-          <div className="absolute inset-0 grid-pattern opacity-30" />
-          <div className="absolute -top-20 -right-20 w-72 h-72 rounded-full bg-brand-accent/30 blur-3xl" />
+        <div className="relative overflow-hidden rounded-[2rem] bg-[#0b1015] p-10 md:p-16 text-white">
+          <div className="absolute -top-20 -right-20 w-72 h-72 rounded-full bg-brand-accent/25 blur-3xl" />
           <div className="relative grid md:grid-cols-[1fr_auto] gap-8 items-center">
             <div>
               <div className="eyebrow text-brand-accent"><Sparkles className="w-3.5 h-3.5" /> Same-day service</div>
-              <h2 className="h-display text-3xl md:text-5xl text-white mt-4">{title}</h2>
+              <h2 className="h-display text-3xl md:text-6xl text-white mt-3 leading-[0.92]">{title}</h2>
               <p className="mt-4 text-white/75 max-w-xl leading-relaxed">{subtitle}</p>
             </div>
             <div className="flex flex-col sm:flex-row gap-3">
-              <Link href={`tel:${site.phoneRaw}`} className="btn-primary"><Phone className="w-4 h-4" /> {site.phone}</Link>
-              <Link href="/book" className="inline-flex items-center gap-2 rounded-full bg-white px-6 py-3 text-sm font-semibold text-brand-navy hover:bg-brand-cream transition hover:-translate-y-0.5">Book online <ArrowRight className="w-4 h-4" /></Link>
+              <Link href={`tel:${site.phoneRaw}`} className="btn-ghost magnetic"><Phone className="w-4 h-4" /> {site.phone}</Link>
+              <Link href="/book" className="btn-secondary magnetic text-white hover:text-brand-accent">Book online <ArrowRight className="w-4 h-4" /></Link>
             </div>
           </div>
         </div>

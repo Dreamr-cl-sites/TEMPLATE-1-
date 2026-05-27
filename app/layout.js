@@ -1,4 +1,4 @@
-import { Inter, Plus_Jakarta_Sans } from 'next/font/google';
+import { Manrope, Space_Grotesk } from 'next/font/google';
 import './globals.css';
 import { site } from '@/lib/site-config';
 import { Toaster } from '@/components/ui/sonner';
@@ -6,8 +6,8 @@ import Navbar from '@/components/site/Navbar';
 import Footer from '@/components/site/Footer';
 import EmergencyBar from '@/components/site/EmergencyBar';
 
-const inter = Inter({ subsets: ['latin'], variable: '--font-inter', display: 'swap' });
-const jakarta = Plus_Jakarta_Sans({ subsets: ['latin'], variable: '--font-jakarta', display: 'swap' });
+const manrope = Manrope({ subsets: ['latin'], variable: '--font-manrope', display: 'swap' });
+const grotesk = Space_Grotesk({ subsets: ['latin'], variable: '--font-grotesk', display: 'swap' });
 
 // EDIT: SEO defaults. Add a real /public/og.jpg for social previews.
 export const metadata = {
@@ -27,7 +27,7 @@ export const metadata = {
 
 export default function RootLayout({ children }) {
   return (
-    <html lang="en" className={`${inter.variable} ${jakarta.variable}`}>
+    <html lang="en" className={`${manrope.variable} ${grotesk.variable}`}>
       <body className="min-h-screen flex flex-col">
         <EmergencyBar />
         <Navbar />

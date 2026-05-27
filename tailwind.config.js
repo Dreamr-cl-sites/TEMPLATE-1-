@@ -19,14 +19,14 @@ module.exports = {
       // ============================================
       colors: {
         brand: {
-          navy: '#0A2540',     // deep trust navy — primary text & dark sections
-          blue: '#1E6FD9',     // main brand blue — links, primary accents
-          sky:  '#E8F1FE',     // very light blue — soft section backgrounds
-          accent: '#FF6B35',   // warm orange — call-to-action pop
-          accentDark: '#E5551F',
-          cream: '#FAF8F4',    // warm off-white page background
-          ink:  '#0F172A',
-          mute: '#64748B',
+          navy: '#0B0D10',
+          blue: '#1CC8C8',
+          sky:  '#101419',
+          accent: '#2AF5D5',
+          accentDark: '#19CDB4',
+          cream: '#F4F7FA',
+          ink:  '#11161D',
+          mute: '#667788',
         },
         border: 'hsl(var(--border))',
         input: 'hsl(var(--input))',
@@ -42,8 +42,8 @@ module.exports = {
         card: { DEFAULT: 'hsl(var(--card))', foreground: 'hsl(var(--card-foreground))' },
       },
       fontFamily: {
-        sans: ['var(--font-inter)', 'system-ui', 'sans-serif'],
-        display: ['var(--font-jakarta)', 'system-ui', 'sans-serif'],
+        sans: ['var(--font-manrope)', 'system-ui', 'sans-serif'],
+        display: ['var(--font-grotesk)', 'system-ui', 'sans-serif'],
       },
       borderRadius: {
         lg: 'var(--radius)',
