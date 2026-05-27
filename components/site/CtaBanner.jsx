@@ -19,8 +19,8 @@ export default function CtaBanner({
               <p className="mt-4 text-white/75 max-w-xl leading-relaxed">{subtitle}</p>
             </div>
             <div className="flex flex-col sm:flex-row gap-3">
-              <Link href={`tel:${site.phoneRaw}`} className="btn-ghost magnetic"><Phone className="w-4 h-4" /> {site.phone}</Link>
-              <Link href="/book" className="btn-secondary magnetic text-white hover:text-brand-accent">Book online <ArrowRight className="w-4 h-4" /></Link>
+              <Link href={`tel:${site.phoneRaw}`} className="btn-primary magnetic"><Phone className="w-4 h-4" /> {site.phone}</Link>
+              <Link href="/book" className="btn-ghost magnetic">Book online <ArrowRight className="w-4 h-4" /></Link>
             </div>
           </div>
         </div>

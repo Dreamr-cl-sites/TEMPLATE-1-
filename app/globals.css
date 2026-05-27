@@ -34,7 +34,7 @@ body { @apply bg-brand-cream text-brand-ink font-sans antialiased; }
 .section { @apply py-28 md:py-40; }
 .eyebrow { @apply inline-flex items-center gap-2 text-[11px] font-semibold uppercase tracking-[0.24em] text-brand-blue; }
 .h-display { @apply font-display font-bold tracking-[-0.04em] text-brand-navy; }
-.btn-primary { @apply inline-flex items-center gap-2 rounded-full bg-brand-navy px-6 py-3 text-sm font-medium text-brand-ink transition-all duration-500 hover:-translate-y-0.5 hover:bg-[#12171d]; }
+.btn-primary { @apply inline-flex items-center gap-2 rounded-full bg-brand-blue px-6 py-3 text-sm font-medium text-white transition-all duration-500 hover:-translate-y-0.5 hover:bg-brand-accentDark; }
 .btn-primary svg { @apply transition-transform duration-500; }
 .btn-primary:hover svg { transform: translateX(4px); }
 .btn-secondary { @apply inline-flex items-center gap-2 rounded-full bg-transparent px-6 py-3 text-sm font-medium text-brand-navy transition-all duration-500 hover:text-brand-blue; }
@@ -43,6 +43,8 @@ body { @apply bg-brand-cream text-brand-ink font-sans antialiased; }
 .btn-ghost { @apply inline-flex items-center gap-2 rounded-full bg-white/80 backdrop-blur px-6 py-3 text-sm font-medium text-brand-navy transition-all duration-500 hover:bg-white hover:-translate-y-0.5; }
 .btn-ghost svg { @apply transition-transform duration-500; }
 .btn-ghost:hover svg { transform: translateX(4px); }
+.badge-tech { @apply inline-flex items-center rounded-full bg-brand-sky text-brand-navy px-3 py-1 text-[11px] font-medium tracking-[0.18em] uppercase; }
+.subtle-link { @apply text-brand-blue hover:text-brand-accent transition; }
 .card-soft { @apply rounded-3xl bg-white/80 backdrop-blur border border-transparent shadow-[0_20px_60px_-34px_rgba(0,0,0,0.45)]; }
 .grid-pattern { background-image: radial-gradient(circle at 1px 1px, rgba(10,37,64,0.08) 1px, transparent 0); background-size: 24px 24px; }
 .reveal { opacity: 1; }
